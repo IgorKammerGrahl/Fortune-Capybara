@@ -78,14 +78,17 @@ class AvaliadorDeMaos {
 
     for (int i = 0; i < maoA.valoresRelevantes.length; i++) {
       if (i >= maoB.valoresRelevantes.length) return 1;
-      if (maoA.valoresRelevantes[i].index > maoB.valoresRelevantes[i].index)
+      if (maoA.valoresRelevantes[i].index > maoB.valoresRelevantes[i].index) {
         return 1;
-      if (maoA.valoresRelevantes[i].index < maoB.valoresRelevantes[i].index)
+      }
+      if (maoA.valoresRelevantes[i].index < maoB.valoresRelevantes[i].index) {
         return -1;
+      }
     }
 
-    if (maoB.valoresRelevantes.length > maoA.valoresRelevantes.length)
+    if (maoB.valoresRelevantes.length > maoA.valoresRelevantes.length) {
       return -1;
+    }
 
     return 0; // Empate
   }
@@ -130,8 +133,9 @@ class AvaliadorDeMaos {
 
   /// Avalia uma mão específica de 5 cartas.
   ResultadoMao _avaliarMaoDe5(List<Carta> maoDe5) {
-    if (maoDe5.length != 5)
+    if (maoDe5.length != 5) {
       throw ArgumentError('A avaliação só pode ser feita com 5 cartas.');
+    }
 
     maoDe5.sort((a, b) => b.valor.index.compareTo(a.valor.index));
 
